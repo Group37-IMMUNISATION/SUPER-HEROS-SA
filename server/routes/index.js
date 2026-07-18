@@ -2,6 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
+const authRoutes = require("../modules/auth");
+
+router.use("/auth", authRoutes);
+
 router.get("/", (req, res) => {
     res.json({
         success: true,
@@ -10,7 +14,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/health", async (req, res) => {
+router.get("/health", (req, res) => {
     res.json({
         success: true,
         status: "Healthy",

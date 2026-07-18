@@ -1,6 +1,7 @@
 -- =====================================
 -- SHUSA DATABASE SCHEMA
 -- Version: 1.0
+-- FIRST
 -- =====================================
 
 CREATE TABLE roles (
