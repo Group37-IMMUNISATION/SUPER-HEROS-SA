@@ -26,15 +26,16 @@ const login = async (email, password) => {
 
     // Generate JWT
     const token = jwt.sign(
-        {
-            userId: user.user_id,
-            roleId: user.role_id,
-            email: user.email
-        },
-        process.env.JWT_SECRET,
-        {
-            expiresIn: process.env.JWT_EXPIRES_IN || "1d"
-        }
+    {
+        userId: user.user_id,
+        roleId: user.role_id,
+        role: user.role_name,
+        email: user.email
+    },
+    process.env.JWT_SECRET,
+    {
+        expiresIn: process.env.JWT_EXPIRES_IN || "1d"
+    }
     );
 
     return {

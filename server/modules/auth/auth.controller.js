@@ -15,6 +15,17 @@ const login = asyncHandler(async (req, res) => {
     );
 });
 
+const getCurrentUser = asyncHandler(async (req, res) => {
+
+    return successResponse(
+        res,
+        "Authenticated user retrieved successfully.",
+        req.user
+    );
+
+});
+
 module.exports = {
-    login
+    login,
+    getCurrentUser
 };

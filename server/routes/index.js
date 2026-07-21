@@ -3,8 +3,10 @@ const express = require("express");
 const router = express.Router();
 
 const authRoutes = require("../modules/auth");
+const userRoutes = require("../modules/users");
 
 router.use("/auth", authRoutes);
+router.use("/users", userRoutes);
 
 router.get("/", (req, res) => {
     res.json({
