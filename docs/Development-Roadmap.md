@@ -1,3 +1,21 @@
+
+server/
+│
+├── modules/
+│   ├── auth/
+│   ├── users/
+│   ├── roles/
+│   ├── applications/
+│   ├── players/        
+│   ├── guardians/
+│   ├── teams/
+│   ├── coaches/
+│   ├── training/
+│   ├── fixtures/
+│   ├── news/
+│   └── gallery/
+
+
 BACKEND
 
 Sprint 1–4     Authentication & Users
