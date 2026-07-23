@@ -176,6 +176,32 @@ const findDocumentsByApplicationId = async (applicationId) => {
 };
 
 
+const approve = async (
+    applicationId,
+    reviewedBy,
+    remarks,
+    client = db
+) => {
+
+    const query = `
+        UPDATE player_applications
+        SET
+            status = 'Approved',
+            reviewed_at = CURRENT_TIMESTAMP,
+            reviewed_by = $2,
+            remarks = $3
+        WHERE application_id = $1
+        RETURNING *;
+    `;
+
+    const { rows } = await client.query(query, [
+        applicationId,
+        reviewedBy,
+        remarks
+    ]);
+
+    return rows[0];
+};
 
 module.exports = {
     create,
@@ -184,5 +210,6 @@ module.exports = {
     existsByApplicationNumber,
     updateStatus,
     findGuardiansByApplicationId,
-    findDocumentsByApplicationId
+    findDocumentsByApplicationId,
+    approve
 };

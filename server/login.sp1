@@ -14,3 +14,5 @@ Write-Host "Token stored in `$token"
 
 after you put this
 .\login.ps1
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGVJZCI6MSwicm9sZSI6IlN5c3RlbSBBZG1pbiIsImVtYWlsIjoiYWRtaW5Ac2h1c2EuY29tIiwiaWF0IjoxNzg0ODM4NzQ1LCJleHAiOjE3ODQ5MjUxNDV9.fycEHnH1FKmqGGldk6kWt8ySzDecw06Wh3cHPs699sY

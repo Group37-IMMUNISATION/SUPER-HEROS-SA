@@ -3,7 +3,7 @@ const db = require("../../config/db");
 /**
  * Create a new player
  */
-const create = async (playerData) => {
+const create = async (playerData, client = db) => {
 
     const query = `
         INSERT INTO players (
@@ -54,7 +54,7 @@ const create = async (playerData) => {
         playerData.status || "Active"
     ];
 
-    const { rows } = await db.query(query, values);
+    const { rows } = await client.query(query, values);
 
     return rows[0];
 };
